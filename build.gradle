@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id  'application'
+}
+
+group = 'com.letscodemom'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'com.letscodemom.Main'
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/com.beust/jcommander
+    implementation group: 'com.beust', name: 'jcommander', version: '1.82'
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    implementation group: 'io.github.openfeign', name: 'feign-core', version: '13.2.1'
+   // https://mvnrepository.com/artifact/io.github.openfeign/feign-gson
+    implementation group: 'io.github.openfeign', name: 'feign-gson', version: '13.2.1'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
